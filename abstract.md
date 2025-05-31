@@ -1,11 +1,11 @@
 **MACAD Thesis Abstract**
 # Improving BIM Interoperability for MEP Systems Using Graphs
-**Krisztian Hadju and Scott Lebow**
+**Krisztian Hajdu and Scott Lebow**
 
 ## Problem Statement
-BIM interoperability tools are mostly focused on the exchange and storage of architectural data, often neglecting the integration of MEP (Mechanical, Electrical, and Plumbing) systems.  This results in robust data exchange for architectural elements but leaves structural and MEP systems underrepresented.  For large campus owner-operators, this can lead to inefficiencies in managing and maintaining their facilities.  
-
-For example, it is easy to determine if a door exists in both a BIM model and a real-world building, but it is much more difficult to determine if a piece of MEP equipment exists in both places.  This can lead to costly errors in maintenance and operations, as well as difficulties in planning for future upgrades or renovations.
+BIM interoperability tools are mostly focused on the exchange and storage of architectural data, where changes can be administered with a high degree of automation directly within platforms like Revit. In contrast, MEP systems (especially electrical) are often only partially modeled, with many components represented only in disconnected 2D drawings, abstract diagrams, and schedules rather than as coordinated 3D elements. This disconnect hinders change management automation and leads to fragmented workflows. 
+A key challenge is maintaining the operative model, which is a consolidated, post-handover representation of current building conditions. During the operations and maintenance phase of the building lifecycle, infrastructural changes occur through refurbishments and extensions (CAPEX) and maintenance (OPEX) works. For CAPEX, relevant 3D and 2D data are extracted by the asset owner, updated by the contractor, and the as-built data is integrated back into the operative model post-project by the owner. OPEX changes are smaller in scope and manually incorporated by the same. In both cases, reliably updating MEP systems and tracking the history of changes are essential for operational accuracy, data continuity, and long-term asset management.
+For large campus owner-operators, the amount of interventions to manage is high, hence the inability to manage MEP systems with the same level of integration and automation as architectural elements limits efficiency and undermines the value of BIM in ongoing operations.
 
 ## Focus Areas
 - Advanced BIM Interoperability and Workflow Automation
@@ -15,6 +15,7 @@ For example, it is easy to determine if a door exists in both a BIM model and a 
 - How can we improve the interoperability of BIM tools to better support the integration of MEP systems, particularly for large campus owner-operators?  
 - How can we leverage Graphs to store the relationships between MEP systems and other building elements to improve data exchange and management?  
 - Can we apply GraphML techniques to analyze and predict the performance of MEP systems in a BIM model, and how can this be used to inform maintenance and operations decisions?
+- How can we support consistent updates and historical tracking of lifecycle changes in the operative model?
 
 ## Methodology
 This research will involve a combination of literature review, case studies, and practical implementation.  We will review existing BIM interoperability tools and identify gaps in their support for MEP systems.  We will then develop a prototype tool that leverages Graphs to store and manage the relationships between MEP systems and other building elements.  Finally, we will apply GraphML techniques to analyze the performance of MEP systems in a BIM model and evaluate the effectiveness of our approach through case studies with large campus owner-operators.
@@ -28,5 +29,6 @@ We want to build tools to incorporate changes to the MEP systems into the Graphs
 ## Expected Outcomes
 - A prototype tool that improves BIM interoperability for MEP systems using Graphs, specifically targeting Revit integration
 - A framework for analyzing and predicting the performance of MEP systems in a BIM model using GraphML techniques
+- Demonstrated methods for managing post-handover infrastructural changes in BIM, including element extraction, reintegration, and lifecycle history tracking
 - Case studies demonstrating the effectiveness of our approach in improving data exchange and management for large campus owner-operators
 - Recommendations for future research and development in BIM interoperability and MEP systems integration
