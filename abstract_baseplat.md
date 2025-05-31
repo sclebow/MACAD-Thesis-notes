@@ -28,7 +28,7 @@ The platform development follows an iterative, user-centered design process, com
 # Planned Technology
 - **Geometric and Parametric Design**: Grasshopper
 - **Backend and Component Database**: Python
-- **Web-based Interface**: Sreamlit, Gradio, or Dash
+- **Web-based Interface**: Streamlit, Gradio, or Dash
 # Expected Outcomes
 - A robust generative design platform capable of producing complex architectural layouts within minutes  
 - Demonstrated time savings and reduction in design errors through automation  
