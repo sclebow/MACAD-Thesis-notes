@@ -26,12 +26,9 @@ The platform development follows an iterative, user-centered design process, com
 - **User Testing**: Engaging architectural practitioners to test and refine the computational workflows through pilot projects.
 
 # Planned Technology
-- Web-based computational design interface using parametric design logic  
-- Custom generative design algorithms (likely developed in Python or visual programming tools such as Grasshopper/Dynamo)  
-- Component database structured for searchability and interoperability  
-- Real-time P-DfMA rule-checking and performance analytics  
-- BIM compatibility and data export in IFC or Revit-compatible formats  
-
+- **Geometric and Parametric Design**: Grasshopper
+- **Backend and Component Database**: Python
+- **Web-based Interface**: Sreamlit, Gradio, or Dash
 # Expected Outcomes
 - A robust generative design platform capable of producing complex architectural layouts within minutes  
 - Demonstrated time savings and reduction in design errors through automation  
