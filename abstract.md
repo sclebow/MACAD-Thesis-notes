@@ -117,3 +117,29 @@ graph TD
     %% New: Load updated file back into BIM software
     J --> A
 ```
+
+## Work Plan
+We have two and a half months to complete this thesis project.
+
+1. **Literature Review and Initial Research** (1 week)
+   - Review existing academic literature on BIM interoperability, MEP systems integration, and GraphML applications in building analysis.
+   - Find example single-line diagrams and Revit models of MEP systems to use as datasets for the prototype.
+   - Identify gaps in current BIM tools and interoperability solutions for MEP systems.
+2. **Data Extraction and Visualiztion** (2 weeks)
+   - Develop the file format for MEP systems in GraphML, including node and edge parameters for electrical, mechanical, and plumbing systems.
+   - Build the MEP system extraction script for Revit using Dynamo or a custom plugin.
+   - Test the extraction script with sample Revit models and single-line diagrams to generate GraphML files. 
+   - Build the web-based GUI to visualize the MEP system graphs and allow users to filter and analyze them.
+3. **Prototype Development/Graph Analysis** (3 weeks)
+   - Develop the prototype tool that leverages GraphML to represent and analyze MEP systems within the web-based GUI.
+   - Implement graph analysis algorithms to extract insights from the MEP system data.
+   - Test the prototype with real-world MEP system data and gather user feedback for improvements.
+   - Build the filtering and change management features of the tool, allowing users to focus on specific MEP systems and track changes over time.
+4. **Case Studies and Validation** (2 weeks)
+   - Conduct case studies with newly generated MEP system graphs to validate the effectiveness of the prototype tool.
+     - Potentially collaborate with industry partners or academic institutions to test the tool in real-world scenarios.
+   - Gather feedback from potential users, outside of the academic setting, to refine the tool and its features.
+   - Adjust the prototype based on user feedback and case study results, ensuring it meets the needs of real-world MEP system management.
+5. **Final Presentation** (1 week)
+   - Compile the research findings, case studies, and user feedback into a final presentation.
+   - Provide actionable recommendations for advancing BIM interoperability and MEP systems integration based on the research outcomes.
