@@ -78,7 +78,7 @@ During the operations and maintenance phase of the building lifecycle, infrastru
    2. For mechanical, nodes would be equipment, duct tees, piping and air terminals.  Edges would be ductwork and piping.
    3. For plumbing, nodes would be equipment, storage, fixtures and drains.  Edges would be piping.
 
-## Concept for Prototype
+## Prototype Concept
 The prototype will consist of a web-based tool that allows users to visualize and analyze a user's MEP system as a knowledge graph. This will enable users to explore the relationships between different components of the MEP system and gain insights into its performance and behavior for proactive maintenance and operations decisions.
 
 We will design a file format that stores the MEP system data in a knowledge graph format, which can be easily imported and exported from BIM software. This will allow users to easily integrate the tool into their existing workflows and leverage the power of GraphML for MEP system analysis.  For the prototype, we will either build a Revit Dynamo script that extracts MEP systems from Revit and converts them into the knowledge graph format and another script that converts the knowledge graph format back into Revit MEP systems (minimum implementation), or we will build a custom Revit plugin that does the same (ideal implementation).  
@@ -90,6 +90,17 @@ We will also build a web-based GUI that loads the knowledge graph data and provi
 The GUI will allow users to filter the MEP system graphs to only include the components that are relevant to a particular task, such as maintenance or operations, or renovation planning. This will enable users to focus on the most important elements of the MEP systems and improve the efficiency of their analysis.
 
 Using this workflow, we will have a framework that can be extended to include other design software and tools, without being tied to a specific BIM platform. This will allow us to build a more flexible and adaptable tool that can be used by a wide range of users and organizations.
+
+### Prototype Concept in Short but Descriptive Bullet Points
+- Extraction of MEP system data from BIM software (e.g., Revit) using a Dynamo script or custom plugin
+- Conversion of extracted MEP system data into a knowledge graph format (GraphML)
+- Storage and management of MEP system data as knowledge graphs, supporting import/export for interoperability
+- Optional: Simple design tool for creating/editing MEP systems directly in the knowledge graph format, independent of BIM software
+- Web-based GUI for loading, visualizing, and analyzing MEP system knowledge graphs
+- Interactive filtering of MEP system graphs for task-specific views (e.g., maintenance, operations, renovation)
+- Analysis tools to extract insights and support decision-making for proactive maintenance and operations
+- Support for updating MEP system graphs based on user input or real-world changes, with reintegration into BIM workflows
+- Framework extensible to other design software and adaptable for future enhancements (e.g., GNN-based design)
 
 ### Mermaid Diagram of the Prototype Workflow
 ```mermaid
@@ -125,7 +136,7 @@ We have two and a half months to complete this thesis project.
    - Review existing academic literature on BIM interoperability, MEP systems integration, and GraphML applications in building analysis.
    - Find example single-line diagrams and Revit models of MEP systems to use as datasets for the prototype.
    - Identify gaps in current BIM tools and interoperability solutions for MEP systems.
-2. **Data Extraction and Visualiztion** (2 weeks)
+2. **Data Extraction and Visualization** (2 weeks)
    - Develop the file format for MEP systems in GraphML, including node and edge parameters for electrical, mechanical, and plumbing systems.
    - Build the MEP system extraction script for Revit using Dynamo or a custom plugin.
    - Test the extraction script with sample Revit models and single-line diagrams to generate GraphML files. 
@@ -143,3 +154,29 @@ We have two and a half months to complete this thesis project.
 5. **Final Presentation** (1 week)
    - Compile the research findings, case studies, and user feedback into a final presentation.
    - Provide actionable recommendations for advancing BIM interoperability and MEP systems integration based on the research outcomes.
+
+```mermaid
+timeline
+    title Thesis Project Work Plan Timeline
+    1 week  : Literature Review and Initial Research
+            : Review literature
+            : Find datasets
+            : Identify gaps in BIM tools
+    2 weeks : Data Extraction and Visualization
+            : Develop GraphML format
+            : Build extraction script
+            : Test extraction with sample data
+            : Build web-based GUI
+    3 weeks : Prototype Development/Graph Analysis
+            : Develop prototype tool
+            : Implement graph analysis algorithms
+            : Test with real-world data
+            : Build filtering/change management features
+    2 weeks : Case Studies and Validation
+            : Conduct case studies
+            : Gather user feedback
+            : Refine tool and features
+    1 week  : Final Presentation
+            : Compile findings
+            : Present recommendations
+```
