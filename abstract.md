@@ -65,3 +65,55 @@ We want to build tools to incorporate changes to the MEP systems into the Graphs
 - Case studies demonstrating the effectiveness of our approach in improving data exchange and management for large campus owner-operators
 - Recommendations for future research and development in BIM interoperability and MEP systems integration
 
+## Context
+During the operations and maintenance phase of the building lifecycle, infrastructural changes occur through refurbishments and extensions (CAPEX) and maintenance (OPEX) works. For CAPEX, relevant 3D and 2D data are extracted by the asset owner, updated by the contractor, and the as-built data is integrated back into the operative model post-project by the owner. OPEX changes are smaller in scope and manually incorporated by the same. A key challenge is maintaining the operative model, which is a consolidated, post-handover representation of current building conditions.
+
+## Initial Requirements
+1. Dataset of electrical single-line diagrams
+   1. Size isn’t as important as we will start by selecting a few to build graphs from
+2. Revit Models of electrical systems or Revit Models generated from the single-line diagrams
+   1. The point is to document the systems, not be tied to a specific design software
+3. A list of parameters for each node (equipment) and edges (connections between equipment) for each discipline.
+   1. For electrical, nodes would be panelboards, transformers, equipment, fixtures and devices.  Edges would be circuits with protection devices, conduit and wiring.
+   2. For mechanical, nodes would be equipment, duct tees, piping and air terminals.  Edges would be ductwork and piping.
+   3. For plumbing, nodes would be equipment, storage, fixtures and drains.  Edges would be piping.
+
+## Concept for Prototype
+The prototype will consist of a web-based tool that allows users to visualize and analyze a user's MEP system as a knowledge graph. This will enable users to explore the relationships between different components of the MEP system and gain insights into its performance and behavior for proactive maintenance and operations decisions.
+
+We will design a file format that stores the MEP system data in a knowledge graph format, which can be easily imported and exported from BIM software. This will allow users to easily integrate the tool into their existing workflows and leverage the power of GraphML for MEP system analysis.  For the prototype, we will either build a Revit Dynamo script that extracts MEP systems from Revit and converts them into the knowledge graph format and another script that converts the knowledge graph format back into Revit MEP systems (minimum implementation), or we will build a custom Revit plugin that does the same (ideal implementation).  
+
+We may also build a simplistic design tool that allows users to create MEP systems in the knowledge graph format, without needing to use BIM software. This will allow users to quickly create and test MEP systems without needing to go through the full BIM workflow, which can be time-consuming and complex.  For future extensions of the tool, this could allow us to build a more GNN-based design tool that can generate MEP systems based on user-defined parameters and constraints, similar to how generative design tools work for architectural elements, however, this is not the focus of the current project.
+
+We will also build a web-based GUI that loads the knowledge graph data and provides interactive visualization and analysis tools for users to explore their MEP systems.
+
+The GUI will allow users to filter the MEP system graphs to only include the components that are relevant to a particular task, such as maintenance or operations, or renovation planning. This will enable users to focus on the most important elements of the MEP systems and improve the efficiency of their analysis.
+
+Using this workflow, we will have a framework that can be extended to include other design software and tools, without being tied to a specific BIM platform. This will allow us to build a more flexible and adaptable tool that can be used by a wide range of users and organizations.
+
+### Mermaid Diagram of the Prototype Workflow
+```mermaid
+graph TD
+    %% Color classes
+    classDef input fill:#dbeafe,stroke:#2563eb,stroke-width:2px;
+    classDef process fill:#fef9c3,stroke:#eab308,stroke-width:2px;
+    classDef data fill:#dcfce7,stroke:#16a34a,stroke-width:2px;
+    classDef gui fill:#f3e8ff,stroke:#a21caf,stroke-width:2px;
+    classDef analysis fill:#fee2e2,stroke:#dc2626,stroke-width:2px;
+    classDef update fill:#e0e7ff,stroke:#6366f1,stroke-width:2px;
+    
+    A[BIM Software]:::input --> B[MEP System Extraction Script]:::process
+    B --> C["Knowledge Graph File (GraphML)"]:::data
+    C --> J["Load Updated GraphML into BIM Software"]:::process
+    C --> D[Web-based GUI]:::gui
+    D --> E[Visualization & Analysis]:::analysis
+    D --> F[Filtering/Task-specific Views]:::analysis
+    E --> G[User Insights/Decisions]:::analysis
+    F --> G
+    G --> H[MEP System Updates]:::update
+    H --> C
+    %% Optional: Design Tool Path
+    I["Simple Design Tool (optional)"]:::input --> C
+    %% New: Load updated file back into BIM software
+    J --> A
+```
